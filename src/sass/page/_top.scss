@@ -1,59 +1,9 @@
-@use "global" as *;
+@use 'global' as *;
 
-// ===========================================
-// ヘッダー
-// ===========================================
+.top-content {
+  overflow: hidden;
 
-.header {
-  position: absolute;
-  top: rem(40);
-  right: rem(40);
-  z-index: 100;
-}
-
-.header__nav {
-  background-color: var(--base-color);
-  height: rem(56);
-  display: flex;
-  align-items: center;
-  padding: 0 rem(40);
-}
-
-.header__nav-list {
-  display: flex;
-  gap: rem(80);
-}
-
-.header__nav-item {
-  /* リストアイテムのスタイル */
-}
-
-.header__nav-link {
-  font-family: var(--base-font-family);
-  font-size: rem(16);
-  color: var(--white);
-  line-height: 1.8;
-  transition: opacity 0.3s ease;
-  @media (any-hover: hover) {
-    &:hover {
-      opacity: 0.7;
-    }
-  }
-}
-
-.header__nav-item--active {
-  position: relative;
-}
-
-.header__nav-item--active::after {
-  content: "";
-  position: absolute;
-  bottom: rem(-8);
-  left: 50%;
-  transform: translateX(-50%);
-  width: rem(140);
-  height: rem(2);
-  background-color: var(--white);
+  --section-margin: rem(100);
 }
 
 // ===========================================
@@ -62,25 +12,38 @@
 
 .fv {
   position: relative;
+  z-index: 2;
   width: 100%;
-  min-height: rem(1434);
-  background-color: #f5f5f5;
-  overflow: hidden;
 }
 
-// 背景レイヤー（absoluteが必要）
-.fv__bg-layer {
+.fv__inner {
+  max-width: rem(1920);
+  padding: 0 rem(40);
+  margin-inline: auto;
+}
+
+.fv__grids {
   position: absolute;
   inset: 0;
-  pointer-events: none;
+  display: grid;
+  grid-template-columns: rem(40) 1fr 1fr 1fr 1fr 1fr 1fr rem(40);
+  gap: 1px;
+  background-color: var(--gray);
+  clip-path: inset(0% 0% rem(30) 0%);
 }
 
+.fv__grid {
+  background-color: var(--gray-light);
+  height: 100%;
+}
+
+// 背景レイヤー
 .fv__main-visual {
   position: absolute;
   top: rem(-90);
   right: rem(-184);
   width: rem(1075);
-  height: rem(1972);
+  aspect-ratio: 1075 / 1972;
   z-index: 1;
 }
 
@@ -105,19 +68,12 @@
   object-fit: cover;
 }
 
-// コンテンツレイヤー（Grid）
+// コンテンツレイヤー
 .fv__content {
-  position: relative;
-  z-index: 2;
-  display: grid;
-  grid-template-columns: rem(480) 1fr;
-  padding: rem(80) rem(40) rem(40);
-}
-
-// 左カラム
-.fv__left {
+  padding-top: rem(150);
   display: flex;
-  flex-direction: column;
+  align-items: flex-end;
+  gap: rem(205);
 }
 
 // ===========================================
@@ -125,12 +81,15 @@
 // ===========================================
 
 .fv__catch {
-  position: relative;
+  min-width: rem(710);
+  width: fit-content;
+  margin-bottom: rem(164);
+  span {
+    display: inline-block;
+  }
 }
 
 .fv__catch-title {
-  display: flex;
-  flex-direction: column;
   position: relative;
   z-index: 1;
 }
@@ -140,15 +99,19 @@
 }
 
 .fv__catch-line--1 {
-  /* 1行目 */
+  margin-bottom: rem(20);
 }
 
 .fv__catch-line--2 {
-  /* 2行目 */
+  margin-bottom: rem(10);
+  display: flex;
+  align-items: center;
+  gap: rem(16);
 }
 
 .fv__catch-line--3 {
-  /* 3行目 */
+  margin-top: rem(-10);
+  margin-bottom: rem(20);
 }
 
 .fv__catch-text {
@@ -160,6 +123,7 @@
 
 .fv__catch-text--white {
   color: var(--white);
+  line-height: rem(64);
 }
 
 .fv__catch-text--dark {
@@ -173,39 +137,31 @@
 }
 
 // ===========================================
-// デコレーションライン
-// ===========================================
-
-.fv__deco-line {
-  position: absolute;
-  background-color: var(--base-color);
-  height: rem(64);
-  z-index: -1;
-}
-
-.fv__deco-line--1 {
-  top: rem(20);
-  left: 0;
-  width: rem(462);
-}
-
-.fv__deco-line--2 {
-  top: rem(345);
-  left: rem(174);
-  width: rem(263);
-}
-
-// ===========================================
 // 右カラム
 // ===========================================
 
 .fv__right {
-  padding-top: rem(110);
-  padding-left: rem(40);
+  position: relative;
+  z-index: 1;
 }
 
 .fv__text-right {
-  max-width: rem(321);
+}
+
+.fv__text-right-desc {
+  font-family: var(--base-font-family);
+  font-size: rem(13);
+  color: var(--base-color);
+  line-height: 1.8;
+  letter-spacing: 0.16em;
+  margin-bottom: rem(30);
+}
+
+.fv__text-right-bottom {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: rem(35);
 }
 
 .fv__text-right-lead {
@@ -215,21 +171,14 @@
   line-height: 1.8;
   text-align: center;
   margin-bottom: rem(20);
-}
-
-.fv__text-right-desc {
-  font-family: var(--base-font-family);
-  font-size: rem(13);
-  color: var(--base-color);
-  line-height: 1.8;
-  letter-spacing: 0.16em;
+  width: 50%;
+  flex-grow: 1;
 }
 
 .fv__logo {
   display: block;
   width: rem(130);
   height: rem(136);
-  margin: rem(30) auto 0;
 }
 
 .fv__logo-img {
@@ -238,20 +187,47 @@
 }
 
 // ===========================================
-// 左下エリア
+// read セクション
 // ===========================================
 
-.fv__bottom-left {
-  display: flex;
-  gap: rem(40);
-  margin-top: rem(280);
+.read {
+  margin-top: rem(-30);
+  position: relative;
+  z-index: 1;
+  padding-top: rem(71);
+  background-image: url('../images/read_bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
 }
 
-.fv__text-left {
+.read__inner {
+  padding: 0 rem(40);
+  max-width: rem(1920);
+  margin-inline: auto;
+}
+
+.read__contents {
+  display: grid;
+  grid-template-columns: rem(275) rem(313);
+  gap: rem(32) rem(39);
+}
+
+.read__thumbnail {
+  aspect-ratio: 275 / 344;
+  max-width: rem(275);
+  margin-left: auto;
+}
+
+.read__thumbnail--right {
+  grid-column: 2;
+}
+
+.read__text-left {
   max-width: rem(313);
 }
 
-.fv__text-left-desc {
+.read__text-left-desc {
   font-family: var(--base-font-family);
   font-size: rem(13);
   color: var(--white);
@@ -259,28 +235,8 @@
   letter-spacing: 0.11em;
 }
 
-// ===========================================
-// サムネイル画像
-// ===========================================
-
-.fv__thumbnail {
-  flex-shrink: 0;
-}
-
-.fv__thumbnail--1 {
-  width: rem(275);
-  height: rem(344);
-}
-
-.fv__thumbnail--2 {
-  width: rem(275);
-  height: rem(355);
-  margin-left: rem(312);
-}
-
-.fv__thumbnail-img {
+.read__thumbnail-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-

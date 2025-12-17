@@ -25,12 +25,7 @@ html {
 }
 @media (min-width: 768px) {
   html {
-    font-size: 1.0666666667vw;
-  }
-}
-@media (min-width: 1500px) {
-  html {
-    font-size: 16px;
+    font-size: 0.8333333333vw;
   }
 }
 
@@ -170,32 +165,29 @@ html {
   word-wrap: break-word;
 }
 
-.inner {
-  max-width: 1450px;
-  max-width: 90.625rem;
-  padding: 0 25px;
-  margin-inline: auto;
-}
-@media screen and (max-width: 767px) {
-  .inner {
-    max-width: 37.5rem;
-    padding: 0 20px;
-  }
+.catch-bg-base {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 3px 2px 0;
+  padding: 0.1875rem 0.125rem 0;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, transparent), color-stop(0.0625rem, #2c3240), color-stop(5.5rem, transparent));
+  background: linear-gradient(to bottom, transparent 0 0.0625rem, #2c3240 0.0625rem 5.5rem, transparent 5.5rem 100%);
+  position: relative;
 }
 
 .header {
-  position: absolute;
+  position: fixed;
+  z-index: 1000;
   top: 40px;
   top: 2.5rem;
-  right: 40px;
-  right: 2.5rem;
+  right: 0px;
+  right: 0rem;
   z-index: 100;
 }
 
 .header__nav {
   background-color: #2c3240;
-  height: 56px;
-  height: 3.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -210,15 +202,40 @@ html {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 80px;
-  gap: 5rem;
 }
 
 .header__nav-item {
-  /* リストアイテムのスタイル */
+  position: relative;
+}
+.header__nav-item::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 140px;
+  width: 8.75rem;
+  height: 2px;
+  height: 0.125rem;
+  background-color: #da1c1c;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+@media (any-hover: hover) {
+  .header__nav-item:hover::after {
+    opacity: 1;
+  }
 }
 
 .header__nav-link {
+  display: block;
+  padding: 13px 15px;
+  padding: 0.8125rem 0.9375rem;
+  min-width: 140px;
+  min-width: 8.75rem;
+  text-align: center;
   font-family: 'Noto Serif JP', '游明朝', 'Yu Mincho', YuMincho, 'Hiragino Mincho ProN', 'Hiragino Mincho Pro', serif;
   font-size: 16px;
   font-size: 1rem;
@@ -233,38 +250,53 @@ html {
   }
 }
 
-.header__nav-item--active {
-  position: relative;
+.inner {
+  max-width: 1450px;
+  max-width: 90.625rem;
+  padding: 0 24px;
+  margin-inline: auto;
+}
+@media screen and (max-width: 767px) {
+  .inner {
+    max-width: 37.5rem;
+    padding: 0 20px;
+  }
 }
 
-.header__nav-item--active::after {
-  content: "";
-  position: absolute;
-  bottom: -8px;
-  bottom: -0.5rem;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  width: 140px;
-  width: 8.75rem;
-  height: 2px;
-  height: 0.125rem;
-  background-color: #fff;
+.top-content {
+  overflow: hidden;
+  --section-margin: rem(100);
+  --section-margin: rem(100);
 }
 
 .fv {
   position: relative;
+  z-index: 2;
   width: 100%;
-  min-height: 1434px;
-  min-height: 89.625rem;
-  background-color: #f5f5f5;
-  overflow: hidden;
 }
 
-.fv__bg-layer {
+.fv__inner {
+  max-width: 1920px;
+  max-width: 120rem;
+  padding: 0 40px;
+  padding: 0 2.5rem;
+  margin-inline: auto;
+}
+
+.fv__grids {
   position: absolute;
   inset: 0;
-  pointer-events: none;
+  display: grid;
+  grid-template-columns: 2.5rem 1fr 1fr 1fr 1fr 1fr 1fr 2.5rem;
+  gap: 1px;
+  background-color: #d8d8d8;
+  -webkit-clip-path: inset(0% 0% 1.875rem 0%);
+          clip-path: inset(0% 0% 1.875rem 0%);
+}
+
+.fv__grid {
+  background-color: #f5f5f5;
+  height: 100%;
 }
 
 .fv__main-visual {
@@ -275,8 +307,7 @@ html {
   right: -11.5rem;
   width: 1075px;
   width: 67.1875rem;
-  height: 1972px;
-  height: 123.25rem;
+  aspect-ratio: 1075/1972;
   z-index: 1;
 }
 
@@ -308,36 +339,32 @@ html {
 }
 
 .fv__content {
-  position: relative;
-  z-index: 2;
-  display: grid;
-  grid-template-columns: 30rem 1fr;
-  padding: 80px 40px 40px;
-  padding: 5rem 2.5rem 2.5rem;
-}
-
-.fv__left {
+  padding-top: 150px;
+  padding-top: 9.375rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  gap: 205px;
+  gap: 12.8125rem;
 }
 
 .fv__catch {
-  position: relative;
+  min-width: 710px;
+  min-width: 44.375rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-bottom: 164px;
+  margin-bottom: 10.25rem;
+}
+.fv__catch span {
+  display: inline-block;
 }
 
 .fv__catch-title {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   position: relative;
   z-index: 1;
 }
@@ -347,15 +374,28 @@ html {
 }
 
 .fv__catch-line--1 {
-  /* 1行目 */
+  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 }
 
 .fv__catch-line--2 {
-  /* 2行目 */
+  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 16px;
+  gap: 1rem;
 }
 
 .fv__catch-line--3 {
-  /* 3行目 */
+  margin-top: -10px;
+  margin-top: -0.625rem;
+  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 }
 
 .fv__catch-text {
@@ -368,6 +408,8 @@ html {
 
 .fv__catch-text--white {
   color: #fff;
+  line-height: 64px;
+  line-height: 4rem;
 }
 
 .fv__catch-text--dark {
@@ -381,41 +423,34 @@ html {
   color: #bd4d51;
 }
 
-.fv__deco-line {
-  position: absolute;
-  background-color: #2c3240;
-  height: 64px;
-  height: 4rem;
-  z-index: -1;
-}
-
-.fv__deco-line--1 {
-  top: 20px;
-  top: 1.25rem;
-  left: 0;
-  width: 462px;
-  width: 28.875rem;
-}
-
-.fv__deco-line--2 {
-  top: 345px;
-  top: 21.5625rem;
-  left: 174px;
-  left: 10.875rem;
-  width: 263px;
-  width: 16.4375rem;
-}
-
 .fv__right {
-  padding-top: 110px;
-  padding-top: 6.875rem;
-  padding-left: 40px;
-  padding-left: 2.5rem;
+  position: relative;
+  z-index: 1;
 }
 
-.fv__text-right {
-  max-width: 321px;
-  max-width: 20.0625rem;
+.fv__text-right-desc {
+  font-family: 'Noto Serif JP', '游明朝', 'Yu Mincho', YuMincho, 'Hiragino Mincho ProN', 'Hiragino Mincho Pro', serif;
+  font-size: 13px;
+  font-size: 0.8125rem;
+  color: #2c3240;
+  line-height: 1.8;
+  letter-spacing: 0.16em;
+  margin-bottom: 30px;
+  margin-bottom: 1.875rem;
+}
+
+.fv__text-right-bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 35px;
+  gap: 2.1875rem;
 }
 
 .fv__text-right-lead {
@@ -427,15 +462,10 @@ html {
   text-align: center;
   margin-bottom: 20px;
   margin-bottom: 1.25rem;
-}
-
-.fv__text-right-desc {
-  font-family: 'Noto Serif JP', '游明朝', 'Yu Mincho', YuMincho, 'Hiragino Mincho ProN', 'Hiragino Mincho Pro', serif;
-  font-size: 13px;
-  font-size: 0.8125rem;
-  color: #2c3240;
-  line-height: 1.8;
-  letter-spacing: 0.16em;
+  width: 50%;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }
 
 .fv__logo {
@@ -444,8 +474,6 @@ html {
   width: 8.125rem;
   height: 136px;
   height: 8.5rem;
-  margin: 30px auto 0;
-  margin: 1.875rem auto 0;
 }
 
 .fv__logo-img {
@@ -453,22 +481,51 @@ html {
   height: 100%;
 }
 
-.fv__bottom-left {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 40px;
-  gap: 2.5rem;
-  margin-top: 280px;
-  margin-top: 17.5rem;
+.read {
+  margin-top: -30px;
+  margin-top: -1.875rem;
+  position: relative;
+  z-index: 1;
+  padding-top: 71px;
+  padding-top: 4.4375rem;
+  background-image: url("../images/read_bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
 }
 
-.fv__text-left {
+.read__inner {
+  padding: 0 40px;
+  padding: 0 2.5rem;
+  max-width: 1920px;
+  max-width: 120rem;
+  margin-inline: auto;
+}
+
+.read__contents {
+  display: grid;
+  grid-template-columns: 17.1875rem 19.5625rem;
+  gap: 32px 39px;
+  gap: 2rem 2.4375rem;
+}
+
+.read__thumbnail {
+  aspect-ratio: 275/344;
+  max-width: 275px;
+  max-width: 17.1875rem;
+  margin-left: auto;
+}
+
+.read__thumbnail--right {
+  grid-column: 2;
+}
+
+.read__text-left {
   max-width: 313px;
   max-width: 19.5625rem;
 }
 
-.fv__text-left-desc {
+.read__text-left-desc {
   font-family: 'Noto Serif JP', '游明朝', 'Yu Mincho', YuMincho, 'Hiragino Mincho ProN', 'Hiragino Mincho Pro', serif;
   font-size: 13px;
   font-size: 0.8125rem;
@@ -477,28 +534,7 @@ html {
   letter-spacing: 0.11em;
 }
 
-.fv__thumbnail {
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
-}
-
-.fv__thumbnail--1 {
-  width: 275px;
-  width: 17.1875rem;
-  height: 344px;
-  height: 21.5rem;
-}
-
-.fv__thumbnail--2 {
-  width: 275px;
-  width: 17.1875rem;
-  height: 355px;
-  height: 22.1875rem;
-  margin-left: 312px;
-  margin-left: 19.5rem;
-}
-
-.fv__thumbnail-img {
+.read__thumbnail-img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;

@@ -1,0 +1,7 @@
+@use 'global' as *;
+.catch-bg-base {
+  width: fit-content;
+  padding: rem(3) rem(2) 0;
+  background: linear-gradient(to bottom, transparent 0 rem(1), var(--base-color) rem(1) rem(88), transparent rem(88) 100%);
+  position: relative;
+}

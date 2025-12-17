@@ -1,7 +1,7 @@
 @use 'sass:math';
 
 // コンテンツのインナー幅（最も共通の幅が多い部分）
-$inner: 1500px;
+$inner: 1920px;
 // ※キャンパス幅ではなくインナーの幅を指す
 
 // CSS変数の定義
@@ -16,7 +16,7 @@ $inner: 1500px;
   --accent-font-family: 'Alex Brush', cursive;
 
   // 余白
-  --padding-pc: 25px;
+  --padding-pc: 24px;
   --padding-sp: 20px;
   // ※検証ツールでしっかり反映されているか確認する
 
@@ -28,8 +28,11 @@ $inner: 1500px;
   //色指定
   --black: #000;
   --white: #fff;
+  --gray: #d8d8d8;
+  --gray-light: #f5f5f5;
   --base-color: #2c3240;
   --accent-color: #bd4d51;
+  --red: #da1c1c;
 }
 
 body {
