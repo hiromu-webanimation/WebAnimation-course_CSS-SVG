@@ -2,7 +2,6 @@
 
 .top-content {
   overflow: hidden;
-
   --section-margin: rem(100);
 }
 
@@ -22,7 +21,7 @@
   margin-inline: auto;
 }
 
-.fv__grids {
+.grids {
   position: absolute;
   inset: 0;
   display: grid;
@@ -32,7 +31,7 @@
   clip-path: inset(0% 0% rem(30) 0%);
 }
 
-.fv__grid {
+.grid {
   background-color: var(--gray-light);
   height: 100%;
 }
@@ -73,7 +72,7 @@
   padding-top: rem(150);
   display: flex;
   align-items: flex-end;
-  gap: rem(205);
+  gap: rem(195);
 }
 
 // ===========================================
@@ -81,7 +80,7 @@
 // ===========================================
 
 .fv__catch {
-  min-width: rem(710);
+  min-width: rem(700);
   width: fit-content;
   margin-bottom: rem(164);
   span {
@@ -153,7 +152,7 @@
   font-size: rem(13);
   color: var(--base-color);
   line-height: 1.8;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.1em;
   margin-bottom: rem(30);
 }
 

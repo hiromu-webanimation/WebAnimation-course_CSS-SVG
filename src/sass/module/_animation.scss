@@ -1,0 +1,70 @@
+@use 'global' as *;
+
+// fvコピーアニメーション
+.fv__catch-line {
+  overflow: hidden;
+}
+
+@keyframes up {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fv__catch-line span {
+  display: inline-block;
+  opacity: 0;
+  animation: up 1.2s cubic-bezier(0.55, 0.01, 0, 1) forwards;
+}
+
+.fv__catch-line:nth-of-type(1) span {
+  animation-delay: 0.4s;
+}
+.fv__catch-line:nth-of-type(2) span {
+  animation-delay: 0.5s;
+}
+.fv__catch-line:nth-of-type(3) span {
+  animation-delay: 0.6s;
+}
+.fv__catch-line:nth-of-type(4) span {
+  animation-delay: 0.7s;
+}
+
+// ビル
+
+@keyframes building-animation {
+  0% {
+    opacity: 0;
+    filter: blur(10px);
+    transform: translateY(rem(15));
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+.fv__main-visual {
+  animation: building-animation 0.7s ease-in-out;
+}
+
+// read
+@keyframes read-animation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.read {
+  opacity: 0;
+  animation: read-animation 0.7s ease-in-out forwards;
+  animation-delay: 2s;
+}
