@@ -63,24 +63,16 @@
 .fv {
   position: relative;
   width: 100%;
-  height: rem(1434);
+  min-height: rem(1434);
   background-color: #f5f5f5;
   overflow: hidden;
 }
 
-.fv__grid {
+// 背景レイヤー（absoluteが必要）
+.fv__bg-layer {
   position: absolute;
-  top: rem(440);
-  left: rem(556);
-  width: rem(130);
-  height: rem(136);
-  z-index: 4;
-}
-
-.fv__grid-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  inset: 0;
+  pointer-events: none;
 }
 
 .fv__main-visual {
@@ -89,7 +81,7 @@
   right: rem(-184);
   width: rem(1075);
   height: rem(1972);
-  z-index: 3;
+  z-index: 1;
 }
 
 .fv__main-visual-img {
@@ -104,7 +96,7 @@
   left: rem(-19);
   width: rem(1950);
   height: rem(741);
-  z-index: 2;
+  z-index: 0;
 }
 
 .fv__bg-img {
@@ -113,37 +105,50 @@
   object-fit: cover;
 }
 
+// コンテンツレイヤー（Grid）
+.fv__content {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: rem(480) 1fr;
+  padding: rem(80) rem(40) rem(40);
+}
+
+// 左カラム
+.fv__left {
+  display: flex;
+  flex-direction: column;
+}
+
 // ===========================================
 // キャッチコピー
 // ===========================================
 
 .fv__catch {
-  position: absolute;
-  top: rem(131);
-  left: rem(40);
-  z-index: 10;
+  position: relative;
 }
 
 .fv__catch-title {
   display: flex;
   flex-direction: column;
+  position: relative;
+  z-index: 1;
 }
 
 .fv__catch-line {
-  display: flex;
-  align-items: baseline;
+  display: block;
 }
 
 .fv__catch-line--1 {
-  margin-bottom: rem(-10);
+  /* 1行目 */
 }
 
 .fv__catch-line--2 {
-  margin-bottom: rem(-5);
+  /* 2行目 */
 }
 
 .fv__catch-line--3 {
-  margin-bottom: rem(-5);
+  /* 3行目 */
 }
 
 .fv__catch-text {
@@ -174,33 +179,33 @@
 .fv__deco-line {
   position: absolute;
   background-color: var(--base-color);
-  z-index: 3;
+  height: rem(64);
+  z-index: -1;
 }
 
 .fv__deco-line--1 {
-  top: rem(151);
-  left: rem(40);
+  top: rem(20);
+  left: 0;
   width: rem(462);
-  height: rem(64);
 }
 
 .fv__deco-line--2 {
-  top: rem(474);
-  left: rem(214);
+  top: rem(345);
+  left: rem(174);
   width: rem(263);
-  height: rem(64);
 }
 
 // ===========================================
-// 右側テキストエリア
+// 右カラム
 // ===========================================
 
+.fv__right {
+  padding-top: rem(110);
+  padding-left: rem(40);
+}
+
 .fv__text-right {
-  position: absolute;
-  top: rem(310);
-  left: rem(556);
-  width: rem(321);
-  z-index: 4;
+  max-width: rem(321);
 }
 
 .fv__text-right-lead {
@@ -233,15 +238,17 @@
 }
 
 // ===========================================
-// 左側テキストエリア
+// 左下エリア
 // ===========================================
 
+.fv__bottom-left {
+  display: flex;
+  gap: rem(40);
+  margin-top: rem(280);
+}
+
 .fv__text-left {
-  position: absolute;
-  top: rem(803);
-  left: rem(354);
-  width: rem(313);
-  z-index: 10;
+  max-width: rem(313);
 }
 
 .fv__text-left-desc {
@@ -257,22 +264,18 @@
 // ===========================================
 
 .fv__thumbnail {
-  position: absolute;
-  z-index: 6;
+  flex-shrink: 0;
 }
 
 .fv__thumbnail--1 {
-  top: rem(734);
-  left: rem(40);
   width: rem(275);
   height: rem(344);
 }
 
 .fv__thumbnail--2 {
-  top: rem(1110);
-  left: rem(352);
   width: rem(275);
   height: rem(355);
+  margin-left: rem(312);
 }
 
 .fv__thumbnail-img {
