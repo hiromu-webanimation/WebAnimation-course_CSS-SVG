@@ -5,18 +5,18 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <meta name="format-detection" content="telephone=no" />
     <!-- meta情報 -->
-    <title>coding template</title>
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
+    <title>Architects of Trust and Vision | 建築デザイン</title>
+    <meta name="description" content="私たちは単に建物をつくるのではありません。人々にインスピレーションを与え、時を超えて価値を育む空間を創造します。" />
+    <meta name="keywords" content="建築,デザイン,設計,建設" />
     <!-- ogp -->
-    <meta property="og:title" content="" />
-    <meta property="og:type" content="" />
+    <meta property="og:title" content="Architects of Trust and Vision | 建築デザイン" />
+    <meta property="og:type" content="website" />
     <meta property="og:url" content="" />
     <meta property="og:image" content="" />
-    <meta property="og:site_name" content="" />
-    <meta property="og:description" content="" />
+    <meta property="og:site_name" content="Architects of Trust and Vision" />
+    <meta property="og:description" content="私たちは単に建物をつくるのではありません。人々にインスピレーションを与え、時を超えて価値を育む空間を創造します。" />
     <!-- ファビコン -->
-    <link rel=""icon"" href="" />
+    <link rel="icon" href="" />
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -27,5 +27,98 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script defer src="./js/script.js"></script>
   </head>
-  <body></body>
+  <body>
+    <!-- ヘッダー -->
+    <header class="header">
+      <nav class="header__nav">
+        <ul class="header__nav-list">
+          <li class="header__nav-item"><a href="#" class="header__nav-link">HOME</a></li>
+          <li class="header__nav-item"><a href="#" class="header__nav-link">私たちについて</a></li>
+          <li class="header__nav-item header__nav-item--active"><a href="#" class="header__nav-link">実績紹介</a></li>
+          <li class="header__nav-item"><a href="#" class="header__nav-link">事業内容</a></li>
+          <li class="header__nav-item"><a href="#" class="header__nav-link">サステナビリティ</a></li>
+          <li class="header__nav-item"><a href="#" class="header__nav-link">ニュース</a></li>
+          <li class="header__nav-item"><a href="#" class="header__nav-link">お問い合わせ</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- ファーストビュー -->
+    <section class="fv">
+      <!-- グリッド背景 -->
+      <div class="fv__grid" aria-hidden="true">
+        <img src="./images/fv_grid.svg" alt="" class="fv__grid-img" />
+      </div>
+
+      <!-- メインビジュアル（建物画像） -->
+      <div class="fv__main-visual">
+        <img src="./images/fv_building.png" alt="建設中の高層ビル" class="fv__main-visual-img" />
+      </div>
+
+      <!-- 背景画像（空・夕景） -->
+      <div class="fv__bg">
+        <img src="./images/fv_bg.png" alt="" class="fv__bg-img" />
+      </div>
+
+      <!-- キャッチコピー -->
+      <div class="fv__catch">
+        <h1 class="fv__catch-title">
+          <span class="fv__catch-line fv__catch-line--1">
+            <span class="fv__catch-text fv__catch-text--white">Architects of</span>
+          </span>
+          <span class="fv__catch-line fv__catch-line--2">
+            <span class="fv__catch-text fv__catch-text--accent">Trust</span>
+            <span class="fv__catch-text fv__catch-text--dark">and</span>
+            <span class="fv__catch-text fv__catch-text--accent">Vision.</span>
+          </span>
+          <span class="fv__catch-line fv__catch-line--3">
+            <span class="fv__catch-text fv__catch-text--dark">Shaping spaces</span>
+          </span>
+          <span class="fv__catch-line fv__catch-line--4">
+            <span class="fv__catch-text fv__catch-text--dark">that </span>
+            <span class="fv__catch-text fv__catch-text--white">matter.</span>
+          </span>
+        </h1>
+      </div>
+
+      <!-- デコレーションライン -->
+      <div class="fv__deco-line fv__deco-line--1" aria-hidden="true"></div>
+      <div class="fv__deco-line fv__deco-line--2" aria-hidden="true"></div>
+
+      <!-- 右側テキスト -->
+      <div class="fv__text-right">
+        <p class="fv__text-right-lead">Precision in every detail.</p>
+        <p class="fv__text-right-desc">
+          私たちは単に建物をつくるのではありません。<br />
+          人々にインスピレーションを与え、時を超えて<br />
+          価値を育む空間を創造します。<br />
+          卓越した品質へのこだわりと、未来を見据えた<br />
+          視点を持って、暮らしや社会、都市のあり方を<br />
+          かたちにしていきます。
+        </p>
+        <div class="fv__logo">
+          <img src="./images/fv_logo.svg" alt="M ロゴ" class="fv__logo-img" />
+        </div>
+      </div>
+
+      <!-- 左下テキスト -->
+      <div class="fv__text-left">
+        <p class="fv__text-left-desc">
+          細部にまでこだわった品質と、安全・環境への配慮、<br />
+          そして都市の新たな景観を描く創造力。<br />
+          それが、私たちの建築に息づいています。<br />
+          積み重ねてきた実績と信頼をもとに、<br />
+          次の世代へ誇れる建築を創り続けていきます。
+        </p>
+      </div>
+
+      <!-- サムネイル画像 -->
+      <div class="fv__thumbnail fv__thumbnail--1">
+        <img src="./images/fv_photo_01.png" alt="建築現場の様子" class="fv__thumbnail-img" />
+      </div>
+      <div class="fv__thumbnail fv__thumbnail--2">
+        <img src="./images/fv_photo_02.png" alt="都市の夕景" class="fv__thumbnail-img" />
+      </div>
+    </section>
+  </body>
 </html>

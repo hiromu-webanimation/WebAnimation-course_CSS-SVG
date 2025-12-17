@@ -1,3 +1,283 @@
 @use "global" as *;
 
+// ===========================================
+// ヘッダー
+// ===========================================
+
+.header {
+  position: absolute;
+  top: rem(40);
+  right: rem(40);
+  z-index: 100;
+}
+
+.header__nav {
+  background-color: var(--base-color);
+  height: rem(56);
+  display: flex;
+  align-items: center;
+  padding: 0 rem(40);
+}
+
+.header__nav-list {
+  display: flex;
+  gap: rem(80);
+}
+
+.header__nav-item {
+  /* リストアイテムのスタイル */
+}
+
+.header__nav-link {
+  font-family: var(--base-font-family);
+  font-size: rem(16);
+  color: var(--white);
+  line-height: 1.8;
+  transition: opacity 0.3s ease;
+  @media (any-hover: hover) {
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+.header__nav-item--active {
+  position: relative;
+}
+
+.header__nav-item--active::after {
+  content: "";
+  position: absolute;
+  bottom: rem(-8);
+  left: 50%;
+  transform: translateX(-50%);
+  width: rem(140);
+  height: rem(2);
+  background-color: var(--white);
+}
+
+// ===========================================
+// ファーストビュー
+// ===========================================
+
+.fv {
+  position: relative;
+  width: 100%;
+  height: rem(1434);
+  background-color: #f5f5f5;
+  overflow: hidden;
+}
+
+.fv__grid {
+  position: absolute;
+  top: rem(440);
+  left: rem(556);
+  width: rem(130);
+  height: rem(136);
+  z-index: 4;
+}
+
+.fv__grid-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fv__main-visual {
+  position: absolute;
+  top: rem(-90);
+  right: rem(-184);
+  width: rem(1075);
+  height: rem(1972);
+  z-index: 3;
+}
+
+.fv__main-visual-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fv__bg {
+  position: absolute;
+  top: rem(693);
+  left: rem(-19);
+  width: rem(1950);
+  height: rem(741);
+  z-index: 2;
+}
+
+.fv__bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+// ===========================================
+// キャッチコピー
+// ===========================================
+
+.fv__catch {
+  position: absolute;
+  top: rem(131);
+  left: rem(40);
+  z-index: 10;
+}
+
+.fv__catch-title {
+  display: flex;
+  flex-direction: column;
+}
+
+.fv__catch-line {
+  display: flex;
+  align-items: baseline;
+}
+
+.fv__catch-line--1 {
+  margin-bottom: rem(-10);
+}
+
+.fv__catch-line--2 {
+  margin-bottom: rem(-5);
+}
+
+.fv__catch-line--3 {
+  margin-bottom: rem(-5);
+}
+
+.fv__catch-text {
+  font-family: var(--second-font-family);
+  font-size: rem(88.601);
+  font-weight: var(--regular);
+  line-height: 1;
+}
+
+.fv__catch-text--white {
+  color: var(--white);
+}
+
+.fv__catch-text--dark {
+  color: var(--base-color);
+}
+
+.fv__catch-text--accent {
+  font-family: var(--accent-font-family);
+  font-size: rem(117.483);
+  color: var(--accent-color);
+}
+
+// ===========================================
+// デコレーションライン
+// ===========================================
+
+.fv__deco-line {
+  position: absolute;
+  background-color: var(--base-color);
+  z-index: 3;
+}
+
+.fv__deco-line--1 {
+  top: rem(151);
+  left: rem(40);
+  width: rem(462);
+  height: rem(64);
+}
+
+.fv__deco-line--2 {
+  top: rem(474);
+  left: rem(214);
+  width: rem(263);
+  height: rem(64);
+}
+
+// ===========================================
+// 右側テキストエリア
+// ===========================================
+
+.fv__text-right {
+  position: absolute;
+  top: rem(310);
+  left: rem(556);
+  width: rem(321);
+  z-index: 4;
+}
+
+.fv__text-right-lead {
+  font-family: var(--second-font-family);
+  font-size: rem(14);
+  color: var(--base-color);
+  line-height: 1.8;
+  text-align: center;
+  margin-bottom: rem(20);
+}
+
+.fv__text-right-desc {
+  font-family: var(--base-font-family);
+  font-size: rem(13);
+  color: var(--base-color);
+  line-height: 1.8;
+  letter-spacing: 0.16em;
+}
+
+.fv__logo {
+  display: block;
+  width: rem(130);
+  height: rem(136);
+  margin: rem(30) auto 0;
+}
+
+.fv__logo-img {
+  width: 100%;
+  height: 100%;
+}
+
+// ===========================================
+// 左側テキストエリア
+// ===========================================
+
+.fv__text-left {
+  position: absolute;
+  top: rem(803);
+  left: rem(354);
+  width: rem(313);
+  z-index: 10;
+}
+
+.fv__text-left-desc {
+  font-family: var(--base-font-family);
+  font-size: rem(13);
+  color: var(--white);
+  line-height: 2.12;
+  letter-spacing: 0.11em;
+}
+
+// ===========================================
+// サムネイル画像
+// ===========================================
+
+.fv__thumbnail {
+  position: absolute;
+  z-index: 6;
+}
+
+.fv__thumbnail--1 {
+  top: rem(734);
+  left: rem(40);
+  width: rem(275);
+  height: rem(344);
+}
+
+.fv__thumbnail--2 {
+  top: rem(1110);
+  left: rem(352);
+  width: rem(275);
+  height: rem(355);
+}
+
+.fv__thumbnail-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 

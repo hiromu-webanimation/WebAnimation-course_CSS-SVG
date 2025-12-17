@@ -25,10 +25,10 @@ html {
 }
 @media (min-width: 768px) {
   html {
-    font-size: 1.4545454545vw;
+    font-size: 1.0666666667vw;
   }
 }
-@media (min-width: 1100px) {
+@media (min-width: 1500px) {
   html {
     font-size: 16px;
   }
@@ -181,5 +181,337 @@ html {
     max-width: 37.5rem;
     padding: 0 20px;
   }
+}
+
+.header {
+  position: absolute;
+  top: 40px;
+  top: 2.5rem;
+  right: 40px;
+  right: 2.5rem;
+  z-index: 100;
+}
+
+.header__nav {
+  background-color: #2c3240;
+  height: 56px;
+  height: 3.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 40px;
+  padding: 0 2.5rem;
+}
+
+.header__nav-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 80px;
+  gap: 5rem;
+}
+
+.header__nav-item {
+  /* リストアイテムのスタイル */
+}
+
+.header__nav-link {
+  font-family: 'Noto Serif JP', '游明朝', 'Yu Mincho', YuMincho, 'Hiragino Mincho ProN', 'Hiragino Mincho Pro', serif;
+  font-size: 16px;
+  font-size: 1rem;
+  color: #fff;
+  line-height: 1.8;
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+@media (any-hover: hover) {
+  .header__nav-link:hover {
+    opacity: 0.7;
+  }
+}
+
+.header__nav-item--active {
+  position: relative;
+}
+
+.header__nav-item--active::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  bottom: -0.5rem;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 140px;
+  width: 8.75rem;
+  height: 2px;
+  height: 0.125rem;
+  background-color: #fff;
+}
+
+.fv {
+  position: relative;
+  width: 100%;
+  height: 1434px;
+  height: 89.625rem;
+  background-color: #f5f5f5;
+  overflow: hidden;
+}
+
+.fv__grid {
+  position: absolute;
+  top: 440px;
+  top: 27.5rem;
+  left: 556px;
+  left: 34.75rem;
+  width: 130px;
+  width: 8.125rem;
+  height: 136px;
+  height: 8.5rem;
+  z-index: 4;
+}
+
+.fv__grid-img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.fv__main-visual {
+  position: absolute;
+  top: -90px;
+  top: -5.625rem;
+  right: -184px;
+  right: -11.5rem;
+  width: 1075px;
+  width: 67.1875rem;
+  height: 1972px;
+  height: 123.25rem;
+  z-index: 3;
+}
+
+.fv__main-visual-img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.fv__bg {
+  position: absolute;
+  top: 693px;
+  top: 43.3125rem;
+  left: -19px;
+  left: -1.1875rem;
+  width: 1950px;
+  width: 121.875rem;
+  height: 741px;
+  height: 46.3125rem;
+  z-index: 2;
+}
+
+.fv__bg-img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.fv__catch {
+  position: absolute;
+  top: 131px;
+  top: 8.1875rem;
+  left: 40px;
+  left: 2.5rem;
+  z-index: 10;
+}
+
+.fv__catch-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.fv__catch-line {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
+
+.fv__catch-line--1 {
+  margin-bottom: -10px;
+  margin-bottom: -0.625rem;
+}
+
+.fv__catch-line--2 {
+  margin-bottom: -5px;
+  margin-bottom: -0.3125rem;
+}
+
+.fv__catch-line--3 {
+  margin-bottom: -5px;
+  margin-bottom: -0.3125rem;
+}
+
+.fv__catch-text {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 88.601px;
+  font-size: 5.5375625rem;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.fv__catch-text--white {
+  color: #fff;
+}
+
+.fv__catch-text--dark {
+  color: #2c3240;
+}
+
+.fv__catch-text--accent {
+  font-family: 'Alex Brush', cursive;
+  font-size: 117.483px;
+  font-size: 7.3426875rem;
+  color: #bd4d51;
+}
+
+.fv__deco-line {
+  position: absolute;
+  background-color: #2c3240;
+  z-index: 3;
+}
+
+.fv__deco-line--1 {
+  top: 151px;
+  top: 9.4375rem;
+  left: 40px;
+  left: 2.5rem;
+  width: 462px;
+  width: 28.875rem;
+  height: 64px;
+  height: 4rem;
+}
+
+.fv__deco-line--2 {
+  top: 474px;
+  top: 29.625rem;
+  left: 214px;
+  left: 13.375rem;
+  width: 263px;
+  width: 16.4375rem;
+  height: 64px;
+  height: 4rem;
+}
+
+.fv__text-right {
+  position: absolute;
+  top: 310px;
+  top: 19.375rem;
+  left: 556px;
+  left: 34.75rem;
+  width: 321px;
+  width: 20.0625rem;
+  z-index: 4;
+}
+
+.fv__text-right-lead {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 14px;
+  font-size: 0.875rem;
+  color: #2c3240;
+  line-height: 1.8;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
+}
+
+.fv__text-right-desc {
+  font-family: 'Noto Serif JP', '游明朝', 'Yu Mincho', YuMincho, 'Hiragino Mincho ProN', 'Hiragino Mincho Pro', serif;
+  font-size: 13px;
+  font-size: 0.8125rem;
+  color: #2c3240;
+  line-height: 1.8;
+  letter-spacing: 0.16em;
+}
+
+.fv__logo {
+  display: block;
+  width: 130px;
+  width: 8.125rem;
+  height: 136px;
+  height: 8.5rem;
+  margin: 30px auto 0;
+  margin: 1.875rem auto 0;
+}
+
+.fv__logo-img {
+  width: 100%;
+  height: 100%;
+}
+
+.fv__text-left {
+  position: absolute;
+  top: 803px;
+  top: 50.1875rem;
+  left: 354px;
+  left: 22.125rem;
+  width: 313px;
+  width: 19.5625rem;
+  z-index: 10;
+}
+
+.fv__text-left-desc {
+  font-family: 'Noto Serif JP', '游明朝', 'Yu Mincho', YuMincho, 'Hiragino Mincho ProN', 'Hiragino Mincho Pro', serif;
+  font-size: 13px;
+  font-size: 0.8125rem;
+  color: #fff;
+  line-height: 2.12;
+  letter-spacing: 0.11em;
+}
+
+.fv__thumbnail {
+  position: absolute;
+  z-index: 6;
+}
+
+.fv__thumbnail--1 {
+  top: 734px;
+  top: 45.875rem;
+  left: 40px;
+  left: 2.5rem;
+  width: 275px;
+  width: 17.1875rem;
+  height: 344px;
+  height: 21.5rem;
+}
+
+.fv__thumbnail--2 {
+  top: 1110px;
+  top: 69.375rem;
+  left: 352px;
+  left: 22rem;
+  width: 275px;
+  width: 17.1875rem;
+  height: 355px;
+  height: 22.1875rem;
+}
+
+.fv__thumbnail-img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 /*# sourceMappingURL=styles.css.map */
