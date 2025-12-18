@@ -1,6 +1,6 @@
 @use 'global' as *;
 
-// fvコピーアニメーション
+// fvタイトル 行ごとのアニメーション　＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
 .fv__catch-line {
   overflow: hidden;
 }
@@ -35,36 +35,87 @@
   animation-delay: 0.7s;
 }
 
+// fvタイトル 黒帯のアニメーション
+@keyframes black-bar-animation {
+  0% {
+    clip-path: inset(0% 0% 0% 0%);
+  }
+  100% {
+    clip-path: inset(0% 0% 0% 100%);
+  }
+}
+.catch-bg-base {
+  position: relative;
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    inset: 0;
+    background-color: var(--base-color);
+    clip-path: inset(0% 0% 0% 0%);
+    animation: black-bar-animation 1.2s cubic-bezier(0.55, 0.01, 0, 1) forwards;
+    animation-delay: 1.6s;
+  }
+}
+
+// fvタイトル　全体のアニメーション
+@keyframes fv-title-animation {
+  to {
+    transform: translateX(0) scale(1);
+  }
+}
+.fv__catch-title {
+  transform-origin: left top;
+  transform: translateX(rem(120)) scale(1.7);
+  animation: fv-title-animation 1s cubic-bezier(0.55, 0.01, 0, 1) forwards;
+  animation-delay: 1.6s;
+}
+
+//
+
 // ビル
 
 @keyframes building-animation {
   0% {
     opacity: 0;
-    filter: blur(10px);
-    transform: translateY(rem(15));
+    filter: blur(20px);
+    transform: translate(rem(-30), rem(15));
   }
   100% {
     opacity: 1;
     filter: blur(0);
-    transform: translateY(0);
+    transform: translate(0, 0);
   }
 }
 
 .fv__main-visual {
-  animation: building-animation 0.7s ease-in-out;
+  opacity: 0;
+  animation: building-animation 1s cubic-bezier(0.55, 0.01, 0, 1) forwards;
+  animation-delay: 1.8s;
 }
 
 // read
-@keyframes read-animation {
-  0% {
-    opacity: 0;
-  }
-  100% {
+@keyframes fadeIn {
+  to {
     opacity: 1;
   }
 }
 .read {
   opacity: 0;
-  animation: read-animation 0.7s ease-in-out forwards;
-  animation-delay: 2s;
+  animation: fadeIn 0.7s ease-in-out forwards;
+  animation-delay: 2.6s;
+}
+
+// header
+.header {
+  opacity: 0;
+  animation: fadeIn 0.7s ease-in-out forwards;
+  animation-delay: 2.6s;
+}
+
+// fv__right
+.fv__right {
+  opacity: 0;
+  animation: fadeIn 0.7s ease-in-out forwards;
+  animation-delay: 2.6s;
 }
