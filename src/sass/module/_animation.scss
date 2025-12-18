@@ -68,13 +68,12 @@
   transform-origin: left top;
   transform: translateX(rem(120)) scale(1.7);
   animation: fv-title-animation 1s cubic-bezier(0.55, 0.01, 0, 1) forwards;
-  animation-delay: 1.6s;
+  animation-delay: 1.7s;
 }
 
 //
 
 // ビル
-
 @keyframes building-animation {
   0% {
     opacity: 0;
@@ -91,7 +90,7 @@
 .fv__main-visual {
   opacity: 0;
   animation: building-animation 1s cubic-bezier(0.55, 0.01, 0, 1) forwards;
-  animation-delay: 1.8s;
+  animation-delay: 1.9s;
 }
 
 // read

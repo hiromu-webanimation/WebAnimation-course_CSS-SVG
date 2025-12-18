@@ -279,8 +279,8 @@ html {
           transform: translateX(7.5rem) scale(1.7);
   -webkit-animation: fv-title-animation 1s cubic-bezier(0.55, 0.01, 0, 1) forwards;
           animation: fv-title-animation 1s cubic-bezier(0.55, 0.01, 0, 1) forwards;
-  -webkit-animation-delay: 1.6s;
-          animation-delay: 1.6s;
+  -webkit-animation-delay: 1.7s;
+          animation-delay: 1.7s;
 }
 
 @-webkit-keyframes building-animation {
@@ -324,8 +324,8 @@ html {
   opacity: 0;
   -webkit-animation: building-animation 1s cubic-bezier(0.55, 0.01, 0, 1) forwards;
           animation: building-animation 1s cubic-bezier(0.55, 0.01, 0, 1) forwards;
-  -webkit-animation-delay: 1.8s;
-          animation-delay: 1.8s;
+  -webkit-animation-delay: 1.9s;
+          animation-delay: 1.9s;
 }
 
 @-webkit-keyframes fadeIn {
