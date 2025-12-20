@@ -564,6 +564,54 @@ html {
   }
 }
 
+.svg .fv__icon {
+  width: 500px;
+  width: 31.25rem;
+  margin-inline: auto;
+  margin-top: 200px;
+  margin-top: 12.5rem;
+}
+.svg .fv__icon-svg {
+  opacity: 0;
+  -webkit-animation: svg-animation 1.2s cubic-bezier(0.01, 0.56, 0, 1) forwards;
+          animation: svg-animation 1.2s cubic-bezier(0.01, 0.56, 0, 1) forwards;
+}
+.svg .star {
+  opacity: 0;
+  -webkit-animation: icon-animation 0.7s ease-in-out forwards;
+          animation: icon-animation 0.7s ease-in-out forwards;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  transform-box: fill-box;
+}
+.svg .star:nth-of-type(1) {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+}
+.svg .star:nth-of-type(2) {
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+}
+.svg .star:nth-of-type(3) {
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+.svg .star:nth-of-type(4) {
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
+}
+.svg .star:nth-of-type(5) {
+  -webkit-animation-delay: 0.7s;
+          animation-delay: 0.7s;
+}
+.svg .logo-mark {
+  opacity: 0;
+  -webkit-animation: logo-mark-animation 0.7s ease-in-out forwards;
+          animation: logo-mark-animation 0.7s ease-in-out forwards;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+
 .top-content {
   overflow: hidden;
   --section-margin: rem(100);
