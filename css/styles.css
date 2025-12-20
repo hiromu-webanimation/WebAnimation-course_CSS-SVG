@@ -339,28 +339,14 @@ html {
     opacity: 1;
   }
 }
+.header,
+.fv__right,
 .read {
   opacity: 0;
-  -webkit-animation: fadeIn 0.7s ease-in-out forwards;
-          animation: fadeIn 0.7s ease-in-out forwards;
-  -webkit-animation-delay: 2.6s;
-          animation-delay: 2.6s;
-}
-
-.header {
-  opacity: 0;
-  -webkit-animation: fadeIn 0.7s ease-in-out forwards;
-          animation: fadeIn 0.7s ease-in-out forwards;
-  -webkit-animation-delay: 2.6s;
-          animation-delay: 2.6s;
-}
-
-.fv__right {
-  opacity: 0;
-  -webkit-animation: fadeIn 0.7s ease-in-out forwards;
-          animation: fadeIn 0.7s ease-in-out forwards;
-  -webkit-animation-delay: 2.6s;
-          animation-delay: 2.6s;
+  -webkit-animation: fadeIn 1s cubic-bezier(0.76, 0, 0.21, 1) forwards;
+          animation: fadeIn 1s cubic-bezier(0.76, 0, 0.21, 1) forwards;
+  -webkit-animation-delay: 2.7s;
+          animation-delay: 2.7s;
 }
 
 @-webkit-keyframes svg-animation {
