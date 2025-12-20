@@ -1,0 +1,10 @@
+@use 'global' as *;
+.svg-page {
+  .fv__icon {
+    width: rem(500);
+    height: auto;
+    aspect-ratio: 130/136;
+    margin-inline: auto;
+    margin-top: rem(200);
+  }
+}
