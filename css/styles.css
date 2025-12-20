@@ -263,6 +263,16 @@ html {
   }
 }
 
+.svg-page .fv__icon {
+  width: 500px;
+  width: 31.25rem;
+  height: auto;
+  aspect-ratio: 130/136;
+  margin-inline: auto;
+  margin-top: 200px;
+  margin-top: 12.5rem;
+}
+
 .top-content {
   overflow: hidden;
   --section-margin: rem(100);
