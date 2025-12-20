@@ -100,24 +100,12 @@
   }
 }
 
+.header,
+.fv__right,
 .read {
   opacity: 0;
-  animation: fadeIn 0.7s ease-in-out forwards;
-  animation-delay: 2.6s;
-}
-
-// header
-.header {
-  opacity: 0;
-  animation: fadeIn 0.7s ease-in-out forwards;
-  animation-delay: 2.6s;
-}
-
-// fv__right
-.fv__right {
-  opacity: 0;
-  animation: fadeIn 0.7s ease-in-out forwards;
-  animation-delay: 2.6s;
+  animation: fadeIn 1s cubic-bezier(0.76, 0, 0.21, 1) forwards;
+  animation-delay: 2.7s;
 }
 
 //fv アイコンアニメーション=============
